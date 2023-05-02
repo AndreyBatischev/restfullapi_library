@@ -6,12 +6,10 @@
   <title>Library</title>
 </head>
 <body>
-  <h1>Welcome to the Library</h1>
+  <h1>Welcome to the Library <%user%></h1>
   <% if (!user) { %>
-    <a href="/auth/google">Login with Google</a>
   <% } else { %>
     <a href="/books">View Books</a>
-    <a href="/auth/logout">Logout</a>
   <% } %>
 </body>
 </html>

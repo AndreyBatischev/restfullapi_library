@@ -10,6 +10,14 @@ router.get('/add', (req, res) => {
     res.render('add-book');
 });
 
+router.get('/auth/register', (req, res) => {
+    res.render('register');
+});
+
+router.get('/auth/login', (req, res) => {
+    res.render('login');
+});
+
 
 
 export default router;
