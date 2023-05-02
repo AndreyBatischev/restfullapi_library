@@ -27,6 +27,14 @@ app.use('/api', bookRoutes);
 app.set('view engine', 'ejs');
 app.set('views', join(__dirname, 'views'));
 
+app.get('/auth/register', (req, res) => {
+    res.render('register');
+});
+
+app.get('/auth/login', (req, res) => {
+    res.render('login');
+});
+
 const PORT = process.env.PORT || 3000;
 
 async function startApp() {
