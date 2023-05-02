@@ -6,6 +6,7 @@ import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 
 
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
@@ -21,7 +22,6 @@ app.use(json());
 // Настройка маршрутов
 app.use('/', routes);
 app.use('/api', bookRoutes);
-
 
 // Настройка EJS для фронтенда
 app.set('view engine', 'ejs');

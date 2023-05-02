@@ -1,7 +1,6 @@
-import { Schema as _Schema, model } from 'mongoose';
-const Schema = _Schema;
+import mongoose from 'mongoose';
 
-const Book = model('Book', new Schema({
+const Book = new mongoose.Schema({
     title: {
         type: String,
         required: true,
@@ -34,7 +33,7 @@ const Book = model('Book', new Schema({
         type: Date,
         default: Date.now,
     },
-}));
+});
 
 
-export default Book;
+export default mongoose.model('Book', Book)
