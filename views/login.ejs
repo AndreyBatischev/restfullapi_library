@@ -6,13 +6,28 @@
 <body>
   <h1>Login</h1>
   <form action="/auth/login" method="post">
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
+    <div class="input-wrap">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
     <br>
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required>
+    <div class="input-wrap">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+    </div>
     <br>
     <button type="submit">Login</button>
   </form>
 </body>
+<style>
+  .input-wrap{
+    display: flex;
+    flex-direction: column;
+  }
+
+   .input-wrap input{
+    margin-top: 5px;
+    max-width: 250px;
+   }
+</style>
 </html>

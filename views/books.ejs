@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="/styles/main.css">
+   <link rel="stylesheet" href="../styles/main.css">
   <title>Library - Books</title>
 </head>
 <body>
@@ -22,4 +22,38 @@
         <% }) %>
     </div>
 </body>
+<style>
+  body{
+    padding: 50px;
+  }
+  .book-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+    justify-content: space-between;
+
+}
+
+.book-item {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    max-width: 300px;
+    min-width: 250px;
+}
+
+.book-title {
+    margin-top: 0;
+}
+
+.book-author,
+.book-genre,
+.book-year,
+.book-publisher,
+.book-description {
+    margin-bottom: 0;
+}
+</style>
 </html>

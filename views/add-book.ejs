@@ -9,25 +9,49 @@
 <body>
   <h1>Add a New Book</h1>
   <form action="/api/books/" method="post">
-    <label for="title">Title:</label>
-    <input type="text" name="title" id="title" required>
+    <div class="input-wrap">
+      <label for="title">Title:</label>
+      <input type="text" name="title" id="title" required>
+    </div>
     <br>
-    <label for="author">Author:</label>
-    <input type="text" name="author" id="author" required>
+    <div class="input-wrap">
+      <label for="author">Author:</label>
+      <input type="text" name="author" id="author" required>
+    </div>
     <br>
-    <label for="genre">Genre:</label>
-    <input type="text" name="genre" id="genre" required>
+    <div class="input-wrap">
+      <label for="genre">Genre:</label>
+      <input type="text" name="genre" id="genre" required>
+    </div>
     <br>
-    <label for="year">Year:</label>
-    <input type="number" name="year" id="year" required>
+    <div class="input-wrap">
+      <label for="year">Year:</label>
+      <input type="number" name="year" id="year" required>
+    </div>
     <br>
-    <label for="description">Description:</label>
-    <textarea name="description" id="description" required></textarea>
+    <div class="input-wrap">
+      <label for="description">Description:</label>
+      <textarea name="description" id="description" required></textarea>
+    </div>
     <br>
-    <label for="publisher">Publisher:</label>
-    <input type="text" name="publisher" id="publisher" required>
+    <div class="input-wrap">
+      <label for="publisher">Publisher:</label>
+      <input type="text" name="publisher" id="publisher" required>
+    </div>
     <br>
     <button type="submit">Add Book</button>
   </form>
 </body>
+<style>
+  .input-wrap{
+    display: flex;
+    flex-direction: column;
+  }
+
+   .input-wrap input,
+   .input-wrap textarea{
+    margin-top: 5px;
+    max-width: 250px;
+   }
+</style>
 </html>

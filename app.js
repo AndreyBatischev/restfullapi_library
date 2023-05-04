@@ -4,7 +4,7 @@ import routes from './routes/index.js';
 import bookRoutes from './routes/bookRoutes.js';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
-import authRoutes from './routes/auth.js'
+import authRoutes from './routes/authRoutes.js'
 import passport from 'passport';
 import session from 'express-session';
 import './config/passport.js'

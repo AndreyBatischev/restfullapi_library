@@ -14,8 +14,8 @@ class BookController {
     async getAll(req, res) {
         try {
             const books = await BookService.getAll();
-            return res.status(200).json(books);
-            // return res.render('books', { books: books });
+            // return res.status(200).json(books);
+            return res.render('books', { books: books });
         } catch (error) {
             res.status(500).json(error.message);
         }
