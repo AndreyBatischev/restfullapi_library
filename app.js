@@ -7,38 +7,36 @@ import { dirname, join } from 'path';
 import authRoutes from './routes/authRoutes.js'
 import passport from 'passport';
 import session from 'express-session';
+import cookieParser from 'cookie-parser';
 import './config/passport.js'
-
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const DB_URL = 'mongodb+srv://user:user123qwe@restapi.gbi9szb.mongodb.net/?retryWrites=true&w=majority';
 
-// Подключение к MongoDB
-
 const app = express();
+
+app.use(cookieParser());
+app.use(session({
+    secret: 'some-secret-key-123',
+    resave: false,
+    saveUninitialized: false,
+    cookie: { secure: 'auto', sameSite: 'lax' }
+}));
 
 app.use(urlencoded({ extended: true }));
 app.use(json());
 
 app.use(passport.initialize());
-app.use(session({
-    secret: 'some-secret-key-123', // замените 'your-secret-key' на свой секретный ключ
-    resave: false,
-    saveUninitialized: true,
-    cookie: { secure: 'auto' }
-}));
+app.use(passport.session());
 
-// Настройка маршрутов
 app.use('/', routes);
 app.use('/api', bookRoutes);
 app.use('/auth', authRoutes);
 
-// Настройка EJS для фронтенда
 app.set('view engine', 'ejs');
 app.set('views', join(__dirname, 'views'));
-
 
 const PORT = process.env.PORT || 3000;
 
@@ -54,4 +52,4 @@ async function startApp() {
     }
 }
 
-startApp()
+startApp();
